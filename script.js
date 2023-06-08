@@ -1,4 +1,5 @@
 let turno = false;
+let finish = false;
 let paso1 = false;
 let paso2 = false;
 let paso3 = false;
@@ -27,6 +28,16 @@ siete.value = " ";
 ocho.value = " ";
 nueve.value = " ";
 function recargar() {
+  uno.style.backgroundColor = "white";
+  dos.style.backgroundColor = "white";
+  tres.style.backgroundColor = "white";
+  cuatro.style.backgroundColor = "white";
+  cinco.style.backgroundColor = "white";
+  seis.style.backgroundColor = "white";
+  siete.style.backgroundColor = "white";
+  ocho.style.backgroundColor = "white";
+  nueve.style.backgroundColor = "white";
+  finish = false;
   paso1 = false;
   paso2 = false;
   paso3 = false;
@@ -55,6 +66,10 @@ function resolver() {
     dos.value == tres.value &&
     (uno.value == "X" || uno.value == "O")
   ) {
+    uno.style.backgroundColor = "yellow";
+    dos.style.backgroundColor = "yellow";
+    tres.style.backgroundColor = "yellow";
+    finish = true;
     if (uno.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -66,6 +81,10 @@ function resolver() {
     cinco.value == seis.value &&
     (cuatro.value == "X" || cuatro.value == "O")
   ) {
+    cuatro.style.backgroundColor = "yellow";
+    cinco.style.backgroundColor = "yellow";
+    seis.style.backgroundColor = "yellow";
+    finish = true;
     if (cuatro.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -77,6 +96,10 @@ function resolver() {
     ocho.value == nueve.value &&
     (siete.value == "X" || siete.value == "O")
   ) {
+    siete.style.backgroundColor = "yellow";
+    ocho.style.backgroundColor = "yellow";
+    nueve.style.backgroundColor = "yellow";
+    finish = true;
     if (siete.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -89,6 +112,10 @@ function resolver() {
     cuatro.value == siete.value &&
     (uno.value == "X" || uno.value == "O")
   ) {
+    uno.style.backgroundColor = "yellow";
+    cuatro.style.backgroundColor = "yellow";
+    siete.style.backgroundColor = "yellow";
+    finish = true;
     if (uno.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -100,6 +127,10 @@ function resolver() {
     cinco.value == ocho.value &&
     (dos.value == "X" || dos.value == "O")
   ) {
+    dos.style.backgroundColor = "yellow";
+    cinco.style.backgroundColor = "yellow";
+    ocho.style.backgroundColor = "yellow";
+    finish = true;
     if (dos.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -111,6 +142,10 @@ function resolver() {
     seis.value == nueve.value &&
     (tres.value == "X" || tres.value == "O")
   ) {
+    tres.style.backgroundColor = "yellow";
+    seis.style.backgroundColor = "yellow";
+    nueve.style.backgroundColor = "yellow";
+    finish = true;
     if (tres.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -123,6 +158,10 @@ function resolver() {
     cinco.value == tres.value &&
     (siete.value == "X" || siete.value == "O")
   ) {
+    siete.style.backgroundColor = "yellow";
+    cinco.style.backgroundColor = "yellow";
+    tres.style.backgroundColor = "yellow";
+    finish = true;
     if (siete.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -134,6 +173,10 @@ function resolver() {
     cinco.value == nueve.value &&
     (uno.value == "X" || uno.value == "O")
   ) {
+    uno.style.backgroundColor = "yellow";
+    cinco.style.backgroundColor = "yellow";
+    nueve.style.backgroundColor = "yellow";
+    finish = true;
     if (uno.value == "X") {
       document.getElementById("winner").value = "X WINS";
     } else {
@@ -142,12 +185,12 @@ function resolver() {
   }
 }
 function funo() {
-  if (turno && !paso1) {
+  if (turno && !paso1 && !finish) {
     uno.value = "X";
     turno = !turno;
     paso1 = true;
   }
-  if (!turno && !paso1) {
+  if (!turno && !paso1 && !finish) {
     uno.value = "O";
     turno = !turno;
     paso1 = true;
@@ -155,12 +198,12 @@ function funo() {
 }
 
 function fdos() {
-  if (turno && !paso2) {
+  if (turno && !paso2 && !finish) {
     dos.value = "X";
     turno = !turno;
     paso2 = true;
   }
-  if (!turno && !paso2) {
+  if (!turno && !paso2 && !finish) {
     dos.value = "O";
     turno = !turno;
     paso2 = true;
@@ -168,84 +211,84 @@ function fdos() {
 }
 
 function ftres() {
-  if (turno && !paso3) {
+  if (turno && !paso3 && !finish) {
     tres.value = "X";
     turno = !turno;
     paso3 = true;
   }
-  if (!turno && !paso3) {
+  if (!turno && !paso3 && !finish) {
     tres.value = "O";
     turno = !turno;
     paso3 = true;
   }
 }
 function fcuatro() {
-  if (turno && !paso4) {
+  if (turno && !paso4 && !finish) {
     cuatro.value = "X";
     turno = !turno;
     paso4 = true;
   }
-  if (!turno && !paso4) {
+  if (!turno && !paso4 && !finish) {
     cuatro.value = "O";
     turno = !turno;
     paso4 = true;
   }
 }
 function fcinco() {
-  if (turno && !paso5) {
+  if (turno && !paso5 && !finish) {
     cinco.value = "X";
     turno = !turno;
     paso5 = true;
   }
-  if (!turno && !paso5) {
+  if (!turno && !paso5 && !finish) {
     cinco.value = "O";
     turno = !turno;
     paso5 = true;
   }
 }
 function fseis() {
-  if (turno && !paso6) {
+  if (turno && !paso6 && !finish) {
     seis.value = "X";
     turno = !turno;
     paso6 = true;
   }
-  if (!turno && !paso6) {
+  if (!turno && !paso6 && !finish) {
     seis.value = "O";
     turno = !turno;
     paso6 = true;
   }
 }
 function fsiete() {
-  if (turno && !paso7) {
+  if (turno && !paso7 && !finish) {
     siete.value = "X";
     turno = !turno;
     paso7 = true;
   }
-  if (!turno && !paso7) {
+  if (!turno && !paso7 && !finish) {
     siete.value = "O";
     turno = !turno;
     paso7 = true;
   }
 }
 function focho() {
-  if (turno && !paso8) {
+  if (turno && !paso8 && !finish) {
     ocho.value = "X";
     turno = !turno;
     paso8 = true;
   }
-  if (!turno && !paso8) {
+  if (!turno && !paso8 && !finish) {
     ocho.value = "O";
     turno = !turno;
     paso8 = true;
   }
 }
 function fnueve() {
-  if (turno && !paso9) {
+  if (turno && !paso9 && !finish) {
     nueve.value = "X";
     turno = !turno;
     paso9 = true;
   }
-  if (!turno && !paso9) {
+  if (!turno && !paso9 && !finish) {
     nueve.value = "O";
     turno = !turno;
     paso9 = true;
